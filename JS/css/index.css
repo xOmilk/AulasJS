@@ -1,0 +1,27 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #523924;
+}
+body h1 {
+  text-align: center;
+  color: white;
+  margin-bottom: 100px;
+}
+
+#botao1, #botao2 {
+  margin-bottom: 20px;
+  display: block;
+  background-color: violet;
+  padding: 20px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+#botao2 {
+  background-color: brown;
+}/*# sourceMappingURL=index.css.map */
