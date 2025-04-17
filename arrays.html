@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+
+    <style>
+        #teste1 {
+            border: solid 1px black;
+            width: fit-content;
+            padding: 10px;
+            color: green;
+        }
+    </style>
+
+
+</head>
+
+
+
+<body>
+
+    <h1>Usando Arrays em javaScript</h1>
+
+    <p>O uso de arrays pode ser dado por alguns metodos</p>
+
+    <p id="teste1"></p>
+    <p id="teste2"></p>
+
+    <script>
+        function organizarFrutas() {
+            document.getElementById("teste2").innerHTML += cores.join(", ").toString();
+            return 1;
+        }
+        
+
+        const metodos = [
+            "Array length",
+            "Array toString()",
+            "Array at()",
+            "Array join()",
+            "Array pop()",
+            "Array push()",
+            "Array concat()",
+        ];
+        const cores = ["laranja", "melao", "maça", "cebola", "abobrinha"]
+
+        document.getElementById("teste1").innerHTML = metodos.join(" <br> ");
+
+        document.getElementById("teste2").innerHTML = "TODAS AS FRUTAS ANTES DA ALTERAÇÃO:<br>"
+
+        cores.pop();
+
+        let isFrutasOrganizadas = organizarFrutas();
+        if (isFrutasOrganizadas) {
+            document.getElementById("teste2").innerHTML += "<br><br>As frutas já foram organizadas<br>";
+            cores.push("ACABOU PORRA");
+
+            document.getElementById("teste2").innerHTML += cores.join(" - ").toString();
+        }
+
+
+    </script>
+
+</body>
+
+</html>
