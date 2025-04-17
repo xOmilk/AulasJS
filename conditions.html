@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condicionais</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+            justify-content: center;
+        }
+
+        input {
+            padding: 20px;
+        }
+
+        button {
+            padding: 20px;
+
+        }
+
+        #feedbackMessage {}
+    </style>
+
+
+</head>
+
+<body>
+
+    <h2>UTILIZANDO CONDICIONAIS</h2>
+
+    <input id="textField" type="text" placeholder="Digite algo">
+    <p id="feedbackMessage"></p>
+    <button onclick="verificar()" id="buttonTextField">Check</button>
+
+
+    <script>
+
+
+
+        function verificar() {
+            let text = document.getElementById("textField").value;
+            if (text == null || text == "") {
+                let message = document.getElementById("feedbackMessage");
+                message.style.color = "red"
+                message.innerHTML = "O texto não pode ser vazio"
+            }
+            else {
+                let message = document.getElementById("feedbackMessage");
+                message.innerHTML = ""
+            }
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>
