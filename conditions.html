@@ -33,14 +33,49 @@
 
     <h2>UTILIZANDO CONDICIONAIS</h2>
 
-    <input id="textField" type="text" placeholder="Digite algo">
+    <input id="textField" type="text" placeholder="Digite uma cor">
     <p id="feedbackMessage"></p>
-    <button onclick="verificar()" id="buttonTextField">Check</button>
+    <button onclick="verificar(), aplicarCor()" id="buttonTextField">Check</button>
 
 
     <script>
 
+        function aplicarCor() {
+            let color = document.getElementById("textField").value;
+            let campoTexto = document.getElementById("textField");
+            let messageColor = document.getElementById("feedbackMessage");
 
+            color = color.toLowerCase();
+            switch (color) {
+
+                case "amarelo":
+                    campoTexto.style.color = "black";
+                    campoTexto.style.backgroundColor = "yellow";
+
+                    messageColor.innerHTML = "Cor amarelo aplicada";
+                    messageColor.style.color = "green";
+                    break;
+                case "verde":
+                    campoTexto.style.backgroundColor = "green";
+
+                    messageColor.innerHTML = "Cor verde aplicada";
+                    messageColor.style.color = "green";
+
+                    break;
+                case "vermelho":
+                    campoTexto.style.backgroundColor = "red";
+
+                    messageColor.innerHTML = "Cor vermelho aplicada";
+                    messageColor.style.color = "green";
+
+                    break;
+                default:
+                    campoTexto.style.color = "white";
+                    campoTexto.style.backgroundColor = "black";
+
+                    messageColor.innerHTML = "Cor não encontrada";
+            }
+        }
 
         function verificar() {
             let text = document.getElementById("textField").value;
@@ -51,13 +86,10 @@
             }
             else {
                 let message = document.getElementById("feedbackMessage");
-                message.innerHTML = ""
+                message.innerHTML = "";
             }
+
         }
-
-
-
-
     </script>
 
 </body>
