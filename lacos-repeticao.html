@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laços de repeticao</title>
+
+    <style>
+        body {
+            background-color: #ccc;
+            display: flex;
+            flex-flow: column wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        select {
+            padding: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Selecione o ano</h2>
+    <select name="" id="ano">
+        <option selected disabled id="disabled">Selecione um ano</option>
+    </select>
+
+    <p id="todos-carros"></p>
+
+
+    <script>
+        function imprimirCarros() {
+            const carros = ["gol g4", "uno", "zentorno", "t20"];
+            var tamanho = carros.length;
+
+            for (let i = 0; i < tamanho; i++) {
+
+                document.getElementById("todos-carros").innerHTML += `Carro ${i+1}: ${carros[i]} <br>`
+
+            }
+            let element = document.getElementById("todos-carros");
+            element.style.border = "solid 2px grey"
+            element.style.padding = "10px"
+        }
+        imprimirCarros();
+
+        function datas() {
+
+            let ano = new Date().getFullYear();
+
+            for (let i = ano; i > 1900; i--) {
+                document.getElementById("ano").innerHTML += `<option value="${i}">${i}</option>`;
+            }
+        }
+        datas();
+
+    </script>
+
+</body>
+
+</html>
