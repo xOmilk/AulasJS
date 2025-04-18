@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SetTimeout e SetInterval</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-flow: column wrap;
+            align-items: center;
+        }
+
+
+        .start {
+            background-color: lightgreen;
+        }
+
+        .finish {
+            background-color: tomato;
+        }
+
+        .finish,
+        .start {
+            font-weight: bold;
+            font-size: 20px;
+            width: 150px;
+            height: 100px;
+            border-radius: 5px;
+            border: 0.5px solid black;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h2>Controle de tempo</h2>
+    <p id="tempo" style="font-size: 30px; font-weight: bold;">0</p>
+    <div>
+
+        <button onclick="iniciarContador()" class="start">Ativar Contagem</button>
+        <button onclick="finalizarContador()" class="finish">Finalizar Contagem</button>
+    </div>
+
+    <script>
+        function ativarContagem() {
+            document.getElementById("tempo").innerHTML = "Começou a contar!"
+
+            contador = setTimeout(function () {
+                document.body.style.backgroundColor = "#ccc"
+                document.getElementById("tempo").innerHTML = "0"
+            }, 5000);
+        }
+        function pararContagem() {
+            clearTimeout(tempo);
+            let element = document.getElementById("tempo")
+            element.innerHTML = "Parou a contagem";
+            document.body.style.backgroundColor = "white"
+        }
+
+        let intervalo;
+        function iniciarContador() {
+            intervalo = setInterval(function () {
+                var cronometro = document.getElementById("tempo").innerHTML;
+                var soma = parseInt(cronometro) + 1;
+                document.getElementById("tempo").innerHTML = soma;
+            }, 1000);
+        }
+
+        function finalizarContador() {
+            clearInterval(intervalo);
+
+        }
+
+
+    </script>
+</body>
+
+</html>
